@@ -11,10 +11,9 @@
     dotnet-runtime = dotnetCorePackages.runtime_8_0;
     nugetDeps = ./deps.nix;
     postPatch=''
-        cat << EOF > '.nix-build.props'
+        cat << EOF > 'HasProjectRef.csproj.user'
         <Project><ItemGroup><Reference Include="Simple"><HintPath>${projects."./Simple/Simple.csproj"}/lib/Simple/Simple.dll</HintPath></Reference><Remove Include="..\Simple\Simple.csproj" /></ItemGroup></Project>
         EOF
-        cat .nix-build.props
     '';
     deps = [
     ];

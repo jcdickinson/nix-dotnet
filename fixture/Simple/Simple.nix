@@ -11,10 +11,9 @@
     dotnet-runtime = dotnetCorePackages.runtime_8_0;
     nugetDeps = ./deps.nix;
     postPatch=''
-        cat << EOF > '.nix-build.props'
+        cat << EOF > 'Simple.csproj.user'
         <Project><ItemGroup /></Project>
         EOF
-        cat .nix-build.props
     '';
     deps = [
     ];

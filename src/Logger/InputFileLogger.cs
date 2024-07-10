@@ -206,12 +206,12 @@ public sealed class InputFileLogger : ILogger
         indented.WriteLine($"postPatch=''");
         indented.Indent++;
 
-        indented.WriteLine($"cat << EOF > '.nix-build.props'");
+        indented.WriteLine($"cat << EOF > '{projectFile}.user'");
 
         indented.WriteLine(references.ToString(SaveOptions.DisableFormatting));
         
         indented.WriteLine("EOF");
-        indented.WriteLine("cat .nix-build.props");
+        // indented.WriteLine("cat .nix-build.props");
         
         // foreach (var file in project.Projects)
         // {
